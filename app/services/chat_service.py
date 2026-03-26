@@ -17,8 +17,12 @@ PERSONALIDADES = {
 
 class ChatService:
     def __init__(self) -> None:
-        # O client usa GOOGLE_API_KEY do ambiente
-        self.client = genai.Client()
+        if not settings.GEMINI_API_KEY:
+            raise ExternalAIServiceError(
+                "GEMINI_API_KEY/GOOGLE_API_KEY nao configurada no ambiente"
+            )
+
+        self.client = genai.Client(api_key=settings.GEMINI_API_KEY)
         self.default_model = settings.GEMINI_MODEL
 
     def process_chat(self, dados: ChatInput) -> ChatOutput:

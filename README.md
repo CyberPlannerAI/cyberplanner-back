@@ -34,7 +34,7 @@ cp .env.example .env
 Depois, ajuste o arquivo `.env` com sua chave:
 
 ```env
-GOOGLE_API_KEY=sua_chave_aqui
+GEMINI_API_KEY=sua_chave_aqui
 GEMINI_MODEL=gemini-2.5-flash
 ```
 
@@ -62,7 +62,7 @@ docker run --rm -p 10000:10000 --env-file .env cyberplanner-back
 
 - Crie um novo Web Service a partir deste repositorio
 - Configure o ambiente como Docker
-- Defina as variaveis de ambiente `GOOGLE_API_KEY` e, se necessario, `GEMINI_MODEL`
+- Defina as variaveis de ambiente `GEMINI_API_KEY` e `GEMINI_MODEL`
 - O Render fornecera a variavel `PORT`, e o container ja esta preparado para escuta dinamica
 
 ## Endpoints
